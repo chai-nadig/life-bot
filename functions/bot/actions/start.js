@@ -1,5 +1,5 @@
-const { newUser} = require('../components/fauna')
 const { getUser } = require('../components/helper')
+const { createFriendship } = require('../components/aura')
 
 module.exports = async ctx => {
   const { id, isBot, name } = getUser(ctx.from)
@@ -9,13 +9,7 @@ module.exports = async ctx => {
   }
 
   try {
-    let isNewUser = await newUser(id)
-    if (isNewUser) {
-      return ctx.reply(`Added ${name} to db!`)
-    }else{
-      return ctx.reply(`${name} is already inside db!`)
-    }
-   
+    await createFriendship(name, "Life-Bot")
   } catch (e) {
     return ctx.reply(`Error occured`)
   }

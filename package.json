@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "neo4j-driver": "^5.2.0",
     "netlify-lambda": "^2.0.1"
   }
 }
