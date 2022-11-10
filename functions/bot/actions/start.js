@@ -1,7 +1,7 @@
 const { getUser } = require('../components/helper')
 const { createFriendship } = require('../components/aura')
 
-module.exports = async ctx => {
+module.exports = async function (ctx) {
   const { id, isBot, name } = getUser(ctx.from)
 
   if (isBot) {

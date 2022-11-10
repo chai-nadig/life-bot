@@ -15,5 +15,4 @@ exports.handler = async event => {
     console.log(e)
     return { statusCode: 400, body: 'This endpoint is meant for bot and telegram communication' };
   }
-
 }

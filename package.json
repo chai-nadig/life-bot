@@ -11,6 +11,6 @@
   "dependencies": {
     "neo4j-driver": "^5.2.0",
     "netlify-lambda": "^2.0.1",
-    "telegraf": "^4.10.0"
+    "telegraf": "^3.36.0"
   }
 }

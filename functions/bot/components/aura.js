@@ -7,8 +7,6 @@ const password = process.env.AURA_PASSWORD;
 // To learn more about the driver: https:/ / neo4j.com / docs / javascript - manual / current / client - applications / #js - driver - driver - object
 const driver = neo4j.driver(uri, neo4j.auth.basic(user, password));
 
-
-
 exports.createFriendship = async function (person1Name, person2Name) {
 
     // To learn more about sessions: https://neo4j.com/docs/javascript-manual/current/session-api/
@@ -64,20 +62,3 @@ exports.findPerson = async function (personName) {
         await session.close();
     }
 }
-
-
-try {
-    const person1Name = 'Alice';
-    const person2Name = 'David';
-
-    await createFriendship(driver, person1Name, person2Name);
-
-    await findPerson(driver, person1Name);
-    await findPerson(driver, person2Name);
-} catch (error) {
-    console.error(`Something went wrong: ${error}`);
-} finally {
-    // Don't forget to close the driver connection when you're finished with it.
-    await driver.close();
-}
-
